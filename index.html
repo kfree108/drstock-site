@@ -1,0 +1,830 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dr. Stock — Fable 5 Runs Your Amazon Supply Chain. Built On $500M+ Of Managed Spend.</title>
+<meta name="description" content="Dr. Stock is an autonomous Amazon inventory and supply chain system powered by Fable 5, operated by an agency with $500M+ in managed spend across 100+ brands. Reorder timing, cash tied up in the wrong SKUs, FBA fee errors, storage and removal decisions — watched daily. You choose the approval level. Orbit software included free. Book a demo, first 30 days free." />
+<link rel="canonical" href="https://drstock.ai/" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Dr. Stock — Fable 5 runs your Amazon supply chain" />
+<meta property="og:description" content="Inventory, cash flow, FBA fees and storage decisions, run daily by Fable 5. You pick the approval level. Orbit software included free. First 30 days free." />
+<meta property="og:url" content="https://drstock.ai/" />
+<meta property="og:image" content="https://drstock.ai/assets/drstock-poster.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Product","name":"Dr. Stock","description":"An autonomous Amazon inventory and supply chain management service powered by Fable 5, operated by the Full Circle group. Reorder timing, cash flow, FBA fee errors, storage and removal decisions, run at the approval level the client chooses. Includes the Orbit software suite.","brand":{"@type":"Brand","name":"Dr. Stock"},"url":"https://drstock.ai/"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does Dr. Stock cost?","acceptedAnswer":{"@type":"Answer","text":"The first 30 days are free. We quote the ongoing plan on the demo call, in writing, once we have seen the size of your catalog and where the money is actually going. There is no onboarding fee and no contract, and the Orbit software suite is included at no additional charge."}},{"@type":"Question","name":"Can I keep approval on everything?","acceptedAnswer":{"@type":"Answer","text":"Yes. That is Level 1. Dr. Stock does all the analysis and writes every recommendation, but nothing is filed, ordered or changed until a human clicks approve. You can move up to supervised or full autonomy later, or move back down, at any time."}},{"@type":"Question","name":"Does Dr. Stock place purchase orders with my supplier?","acceptedAnswer":{"@type":"Answer","text":"Only if you explicitly turn that on, and even then inside limits you set. By default he produces the reorder recommendation with the quantity, the date it needs to leave the supplier, and the working assumptions behind it, and a human sends it. Money leaving your bank account is a human decision unless you decide otherwise."}},{"@type":"Question","name":"How does fee and reimbursement recovery work?","acceptedAnswer":{"@type":"Answer","text":"Dr. Stock reconciles what you shipped against what Amazon received, and reconciles the fees Amazon charged against the dimensions and weights on file for each SKU. Where a discrepancy is documented and checkable, he assembles the evidence and files through Amazon's own case process inside Amazon's stated windows. We do not promise a recovery amount, because nobody honestly can."}},{"@type":"Question","name":"Is Orbit really included?","acceptedAnswer":{"@type":"Answer","text":"Yes. The full suite — inventory, finance, sales, advertising, ASIN-level profitability, and the BSR, buy box, price and fee trackers — comes with the service at no additional charge. There is no separate software line on the invoice."}},{"@type":"Question","name":"Do you replace my 3PL or my ops person?","acceptedAnswer":{"@type":"Answer","text":"No. Dr. Stock decides what to order, when, and what to do with what you already own. Your 3PL still moves boxes and your ops person still handles the relationships and the exceptions. What changes is that the decision arrives already worked out, every day, on every SKU."}}]}]}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DRSTOCKTBD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date()); gtag('config', 'G-DRSTOCKTBD');
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('a[data-cta]').forEach(function(el){
+      el.addEventListener('click', function(){ gtag('event','book_demo_click',{location: el.dataset.cta}); });
+    });
+    var v=document.querySelector('video');
+    if(v){ var p=v.play(); if(p&&p.catch){p.catch(function(){});}
+      document.addEventListener('click',function once(){v.play().catch(function(){});document.removeEventListener('click',once);}); }
+    /* console mock tabs — presentational only */
+    document.querySelectorAll('[data-tab]').forEach(function(t){
+      t.addEventListener('click', function(){
+        var root = t.closest('.console');
+        root.querySelectorAll('[data-tab]').forEach(function(x){x.classList.remove('on');});
+        t.classList.add('on');
+        root.querySelectorAll('[data-pane]').forEach(function(p){
+          p.hidden = (p.dataset.pane !== t.dataset.tab);
+        });
+      });
+    });
+  });
+</script>
+<style>
+:root{
+  --base:#08060f; --raised:#0e0b1a; --fg:#f4f4f6; --dim:#9a97a8; --line:#221e33;
+  --accent:#00ff9d; --cyan:#00e5ff; --amber:#f59e0b; --rose:#f4718b;
+  /* tokens the shared engagement.css reads, mapped onto this page's palette */
+  --card:#0e0b1a; --ink:#f4f4f6; --soft:#171327; --accent-fg:#08060f;
+  --display:'Archivo',system-ui,sans-serif; --body:'Inter',system-ui,sans-serif; --mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--base);color:var(--fg);font-family:var(--body);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px;}
+.narrow{max-width:780px;}
+a{color:var(--accent);}
+img{max-width:100%;}
+.kicker{font-family:var(--mono);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.02em;line-height:1.08;margin:0;}
+h1{font-size:clamp(34px,5.4vw,62px);font-weight:800;}
+h2{font-size:clamp(26px,3.7vw,40px);font-weight:700;}
+h3{font-size:18px;font-weight:700;}
+p{margin:.6em 0;} .dim{color:var(--dim);} .mono{font-family:var(--mono);}
+
+nav.top{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);background:rgba(8,6,15,.88);backdrop-filter:blur(10px);}
+nav.top .wrap{display:flex;align-items:center;justify-content:space-between;padding:13px 22px;}
+.logo{font-family:var(--display);font-weight:800;font-size:18px;letter-spacing:-.02em;}
+.logo span{color:var(--accent);}
+.navcta{font-family:var(--mono);font-size:12.5px;font-weight:700;background:var(--accent);color:var(--base);padding:9px 16px;border-radius:7px;text-decoration:none;}
+
+/* HERO with video */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(244,244,246,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(244,244,246,.035) 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:radial-gradient(ellipse 80% 70% at 30% 25%,#000 35%,transparent 100%);mask-image:radial-gradient(ellipse 80% 70% at 30% 25%,#000 35%,transparent 100%);}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:64px 22px 68px;}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr;gap:34px;padding-top:44px;}}
+.free-pill{display:inline-block;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(0,255,157,.35);background:rgba(0,255,157,.06);padding:6px 14px;border-radius:100px;margin-bottom:22px;}
+.lede{font-size:18.5px;color:var(--dim);max-width:54ch;margin-top:20px;}
+.btn{display:inline-block;background:var(--accent);color:var(--base);font-weight:800;font-size:16.5px;padding:15px 30px;border-radius:9px;text-decoration:none;transition:filter .15s;}
+.btn:hover{filter:brightness(1.12);}
+.btn-sub{display:block;margin-top:12px;font-family:var(--mono);font-size:12.5px;color:var(--dim);}
+.doc-frame{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.5);}
+.doc-frame video{display:block;width:100%;height:auto;}
+.doc-badge{position:absolute;left:14px;bottom:14px;right:14px;background:rgba(8,6,15,.82);backdrop-filter:blur(8px);border:1px solid rgba(0,255,157,.25);border-radius:11px;padding:12px 14px;}
+.doc-badge .n{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);}
+.doc-badge .t{font-family:var(--display);font-weight:700;font-size:15.5px;margin-top:3px;}
+.doc-badge .s{font-size:12px;color:var(--dim);margin-top:2px;}
+.live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);margin-right:6px;animation:pulse 1.8s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+
+.ticker{border-bottom:1px solid var(--line);background:rgba(14,11,26,.6);overflow:hidden;padding:13px 0;}
+.tick-track{display:flex;white-space:nowrap;animation:tick 42s linear infinite;}
+@keyframes tick{to{transform:translateX(-50%);}}
+.tick-track span{font-family:var(--mono);font-size:12.5px;color:var(--dim);padding:0 26px;}
+.tick-track span b{color:var(--fg);font-weight:500;}
+@media(prefers-reduced-motion:reduce){.tick-track{animation:none;}}
+
+section{padding:80px 0;border-bottom:1px solid var(--line);}
+.section-head{max-width:680px;margin-bottom:40px;}
+.section-head h2{margin-top:12px;}
+.section-head p{margin-top:14px;color:var(--dim);font-size:16.5px;}
+
+.brands{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-top:26px;}
+.brand{background:var(--raised);border:1px solid var(--line);border-radius:12px;padding:18px 16px;text-align:center;}
+.brand .nm{font-family:var(--display);font-weight:700;font-size:16px;}
+.brand .cat{font-family:var(--mono);font-size:10.5px;color:var(--dim);margin-top:5px;letter-spacing:.06em;}
+
+.scale{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}
+.sc{background:var(--raised);border:1px solid var(--line);border-radius:13px;padding:24px;}
+.sc .big{font-family:var(--display);font-size:36px;font-weight:800;color:var(--accent);letter-spacing:-.03em;line-height:1;}
+.sc .lbl{font-size:14px;color:var(--dim);margin-top:10px;}
+
+.stack{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));}
+.step{background:var(--raised);border:1px solid var(--line);border-radius:13px;padding:22px;}
+.step .n{font-family:var(--mono);font-size:11.5px;color:var(--accent);letter-spacing:.16em;}
+.step h3{margin:9px 0 7px;font-size:17px;}
+.step .txt{font-size:14.5px;color:var(--dim);margin:0;}
+
+.watch{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));margin-top:8px;}
+.w{border:1px solid var(--line);border-left:3px solid var(--cyan);border-radius:0 11px 11px 0;padding:16px 18px;background:var(--raised);}
+.w h3{font-size:14.5px;font-family:var(--body);font-weight:600;}
+.w .txt{font-size:13.5px;color:var(--dim);margin:5px 0 0;}
+
+/* leaks */
+.leaks{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
+.leak{border:1px solid var(--line);border-radius:13px;background:var(--raised);padding:24px;border-top:3px solid var(--rose);}
+.leak .lk{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--rose);}
+.leak h3{margin:10px 0 8px;font-size:18px;}
+.leak .txt{font-size:14.5px;color:var(--dim);margin:0;}
+.leak .txt+.txt{margin-top:9px;}
+.leak b{color:var(--fg);font-weight:600;}
+
+.ladder{display:grid;gap:16px;grid-template-columns:1fr 1fr;}
+@media(max-width:720px){.ladder{grid-template-columns:1fr;}}
+.lcol{border:1px solid var(--line);border-radius:13px;padding:26px;background:var(--raised);}
+.lcol.auto{border-color:rgba(0,255,157,.3);}
+.lcol h3{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;}
+.lcol.auto h3{color:var(--accent);} .lcol.human h3{color:var(--amber);}
+.lcol ul{margin:16px 0 0;padding:0;list-style:none;}
+.lcol li{font-size:14.7px;padding:9px 0 9px 24px;position:relative;border-bottom:1px solid rgba(34,30,51,.6);}
+.lcol li:last-child{border-bottom:none;}
+.lcol li::before{content:"›";position:absolute;left:4px;font-family:var(--mono);color:var(--accent);}
+.lcol.human li::before{content:"⌘";color:var(--amber);font-size:11px;top:11px;}
+
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:13px;background:var(--raised);}
+table{width:100%;border-collapse:collapse;font-size:15px;}
+th,td{padding:15px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+thead th{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);font-weight:500;}
+thead th.us{color:var(--accent);}
+td.us{background:rgba(0,255,157,.045);font-weight:500;}
+td:first-child{color:var(--dim);font-family:var(--mono);font-size:12.5px;}
+tbody tr:last-child td{border-bottom:none;}
+
+.shot-cap{font-family:var(--mono);font-size:11.5px;color:#6d6a7c;margin-top:11px;letter-spacing:.03em;}
+
+/* ---------- console recreation ---------- */
+.console{border:1px solid var(--line);border-radius:15px;overflow:hidden;background:var(--raised);box-shadow:0 26px 70px rgba(0,0,0,.45);}
+.console-bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;border-bottom:1px solid var(--line);background:rgba(8,6,15,.6);}
+.dots{display:flex;gap:6px;}
+.dots i{width:9px;height:9px;border-radius:50%;background:#332e47;display:block;}
+.crumb{font-family:var(--mono);font-size:11.5px;color:var(--dim);}
+.crumb b{color:var(--fg);font-weight:500;}
+.badge{margin-left:auto;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);border:1px solid rgba(245,158,11,.35);background:rgba(245,158,11,.08);padding:5px 11px;border-radius:100px;white-space:nowrap;}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;padding:12px 16px 0;}
+.tabs button{font-family:var(--mono);font-size:12px;color:var(--dim);background:transparent;border:1px solid var(--line);border-radius:8px 8px 0 0;border-bottom:none;padding:9px 15px;cursor:pointer;}
+.tabs button.on{color:var(--accent);background:rgba(0,255,157,.06);border-color:rgba(0,255,157,.3);}
+.pane{padding:22px 16px 24px;border-top:1px solid var(--line);margin-top:-1px;}
+.update{border-left:2px solid var(--accent);padding:2px 0 2px 18px;max-width:74ch;}
+.update .stamp{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);}
+.update .txt{font-size:15px;color:#cfccdb;margin:11px 0;}
+.update .txt strong{color:var(--fg);}
+.props{display:grid;gap:14px;}
+.prop{border:1px solid var(--line);border-radius:12px;background:rgba(8,6,15,.55);padding:18px;}
+.prop-top{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:11px;}
+.tag{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:4px 9px;border-radius:5px;border:1px solid var(--line);color:var(--dim);}
+.tag.act{color:var(--cyan);border-color:rgba(0,229,255,.32);background:rgba(0,229,255,.06);}
+.tag.wait{color:var(--amber);border-color:rgba(245,158,11,.32);background:rgba(245,158,11,.07);}
+.tag.done{color:var(--accent);border-color:rgba(0,255,157,.32);background:rgba(0,255,157,.07);}
+.prop h4{font-family:var(--display);font-size:17px;font-weight:700;margin:0 0 12px;letter-spacing:-.01em;line-height:1.3;}
+.prop h4 code{font-family:var(--mono);font-size:15px;color:var(--accent);background:rgba(0,255,157,.08);padding:1px 6px;border-radius:5px;word-break:break-word;}
+.rows{display:grid;gap:9px;margin:0 0 16px;}
+.row{display:grid;grid-template-columns:118px 1fr;gap:14px;font-size:14px;align-items:start;}
+@media(max-width:560px){.row{grid-template-columns:1fr;gap:2px;}}
+.row dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--dim);padding-top:4px;}
+.row dd{margin:0;color:#cfccdb;}
+.row dd b{color:var(--fg);font-weight:600;}
+.row.rb dt{color:var(--rose);}
+.actions{display:flex;gap:10px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:15px;}
+.approve,.reject{font-family:var(--mono);font-size:12.5px;font-weight:700;border-radius:7px;padding:10px 16px;border:1px solid;cursor:default;}
+.approve{background:var(--accent);color:var(--base);border-color:var(--accent);}
+.reject{background:transparent;color:var(--dim);border-color:var(--line);}
+.mock-note{font-family:var(--mono);font-size:11px;color:#6d6a7c;margin-left:auto;align-self:center;}
+
+/* ---------- approval levels ---------- */
+.levels{display:grid;gap:16px;grid-template-columns:repeat(3,1fr);}
+@media(max-width:900px){.levels{grid-template-columns:1fr;}}
+.lev{border:1px solid var(--line);border-radius:14px;background:var(--raised);padding:26px;display:flex;flex-direction:column;}
+.lev.l1{border-top:3px solid var(--amber);}
+.lev.l2{border-top:3px solid var(--cyan);}
+.lev.l3{border-top:3px solid var(--accent);}
+.lev .lv{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);}
+.lev.l1 .lv{color:var(--amber);} .lev.l2 .lv{color:var(--cyan);} .lev.l3 .lv{color:var(--accent);}
+.lev h3{margin:10px 0 10px;font-size:20px;}
+.lev>.txt{font-size:14.6px;color:var(--dim);margin:0 0 16px;}
+.lev ul{margin:0;padding:0;list-style:none;}
+.lev li{font-size:14px;color:#cfccdb;padding:7px 0 7px 20px;position:relative;}
+.lev li::before{content:"›";position:absolute;left:2px;font-family:var(--mono);color:var(--dim);}
+.lev .foot{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);font-size:13.4px;color:var(--dim);}
+.lev .foot b{color:var(--fg);font-weight:600;display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;margin-bottom:5px;}
+.constant{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:22px;}
+.const{border:1px solid var(--line);border-radius:11px;background:rgba(14,11,26,.55);padding:17px 19px;}
+.const h4{font-family:var(--body);font-size:14.5px;font-weight:600;margin:0 0 5px;}
+.const .txt{font-size:13.4px;color:var(--dim);margin:0;}
+
+/* ---------- orbit ---------- */
+.orbit-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:26px;}
+.mod{border:1px solid var(--line);border-radius:12px;background:var(--raised);padding:20px;}
+.mod .g{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);}
+.mod ul{margin:12px 0 0;padding:0;list-style:none;}
+.mod li{font-size:14.2px;color:#cfccdb;padding:6px 0;border-bottom:1px solid rgba(34,30,51,.55);}
+.mod li:last-child{border-bottom:none;}
+.mod li span{color:var(--dim);font-size:12.8px;display:block;}
+.stmini table{font-size:13.5px;}
+.stmini th,.stmini td{padding:11px 13px;white-space:nowrap;}
+.stmini td:first-child{color:var(--fg);font-family:var(--body);font-size:13.5px;}
+.op{font-family:var(--mono);font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px;}
+.op.hi{color:var(--accent);background:rgba(0,255,157,.1);}
+.op.md{color:var(--amber);background:rgba(245,158,11,.1);}
+.op.lo{color:var(--rose);background:rgba(244,113,139,.1);}
+.free-band{border:1px solid rgba(0,255,157,.28);background:linear-gradient(180deg,rgba(0,255,157,.06),rgba(14,11,26,.9));border-radius:14px;padding:26px 28px;margin-top:28px;}
+.free-band h3{font-size:21px;margin-bottom:8px;}
+.free-band .txt{color:var(--dim);font-size:15px;margin:0;max-width:72ch;}
+
+.price-card{border:1px solid rgba(0,255,157,.28);border-radius:16px;background:linear-gradient(180deg,rgba(0,255,157,.05),rgba(14,11,26,.9));padding:40px;text-align:center;max-width:640px;margin:0 auto;}
+@media(max-width:520px){.price-card{padding:30px 22px;}}
+.price-num{font-family:var(--display);font-size:clamp(30px,5.2vw,52px);font-weight:800;letter-spacing:-.03em;line-height:1.05;}
+.price-num small{font-size:19px;color:var(--dim);font-weight:600;}
+.price-terms{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin:22px 0 6px;}
+.price-terms span{font-family:var(--mono);font-size:11.5px;color:var(--dim);border:1px solid var(--line);padding:6px 12px;border-radius:100px;}
+.incl{text-align:left;max-width:460px;margin:26px auto 0;padding:0;}
+.incl li{list-style:none;font-size:14.8px;padding:8px 0 8px 26px;position:relative;}
+.incl li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:700;}
+.price-note{font-size:14.2px;color:var(--dim);max-width:52ch;margin:24px auto 0;text-align:left;border-left:2px solid var(--line);padding-left:16px;}
+
+.faq details{border-bottom:1px solid var(--line);padding:19px 0;}
+.faq summary{cursor:pointer;font-weight:600;font-size:16.5px;list-style:none;display:flex;justify-content:space-between;gap:16px;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:19px;}
+.faq details[open] summary::after{content:"–";}
+.faq .txt{color:var(--dim);font-size:15.4px;margin:13px 0 0;max-width:70ch;}
+
+/* ---------- family ---------- */
+.family{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-top:26px;}
+.fam{border:1px solid var(--line);border-radius:12px;background:var(--raised);padding:20px 22px;text-decoration:none;color:inherit;display:block;transition:border-color .15s,transform .15s;}
+.fam:hover{border-color:rgba(0,255,157,.35);transform:translateY(-2px);}
+.fam .nm{font-family:var(--display);font-weight:700;font-size:17px;}
+.fam .url{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.04em;margin-top:3px;}
+.fam .txt{font-size:14.2px;color:var(--dim);margin:9px 0 0;}
+
+/* ---------- overrides for the shared engagement.css components ---------- */
+.fc-pop{background:rgba(4,3,9,.8);}
+.fc-pop-card{border:1px solid rgba(0,255,157,.3);box-shadow:0 30px 80px rgba(0,0,0,.7);}
+.fc-pop-card h3{font-family:var(--display);letter-spacing:-.02em;font-weight:700;}
+.fc-cta{background:linear-gradient(180deg,rgba(0,255,157,.05),rgba(14,11,26,.9));}
+.fc-cta-btn{font-family:var(--body);font-weight:700;}
+
+footer{padding:40px 0 60px;}
+footer .fine{font-family:var(--mono);font-size:11.5px;color:#6d6a7c;max-width:62ch;line-height:1.7;}
+.cta-final{text-align:center;}
+</style>
+</head>
+<body>
+
+<nav class="top"><div class="wrap">
+  <div class="logo">Dr. <span>Stock</span></div>
+  <a class="navcta" href="#demo" data-cta="nav">Book a demo →</a>
+</div></nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <div>
+      <span class="free-pill">First 30 days free</span>
+      <h1>Meet Dr. Stock.<br />Fable&nbsp;5 runs your<br />Amazon supply chain.</h1>
+      <p class="lede">Your money is not only in your bank account. It is sitting in a container, in a warehouse, in units you over-ordered, and in fees you were charged incorrectly. Dr. Stock is an autonomous inventory and supply chain system — powered by Fable 5, operated by a team with <strong style="color:var(--fg)">$500M+</strong> in managed spend across <strong style="color:var(--fg)">100+</strong> brands. <strong style="color:var(--fg)">You choose how much he does on his own.</strong></p>
+      <div style="margin-top:32px">
+        <a class="btn" href="#demo" data-cta="hero">Book a demo call →</a>
+        <span class="btn-sub">20 minutes. First 30 days free. No contract.</span>
+      </div>
+    </div>
+    <div class="doc-frame">
+      <video src="assets/drstock.mp4" poster="assets/drstock-poster.jpg" autoplay loop muted playsinline preload="metadata" aria-label="Dr. Stock"></video>
+      <div class="doc-badge">
+        <div class="n"><span class="live-dot"></span>On duty · 24/7/365</div>
+        <div class="t">Dr. Stock</div>
+        <div class="s">Inventory, cash and fees — checked daily, treated at the approval level you set.</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true"><div class="tick-track">
+  <span><b>$500M+</b> in managed spend ·</span><span><b>100+</b> brands worked with ·</span><span><b>Orbit software included free</b> ·</span><span><b>HexClad</b> ·</span><span><b>Ridge</b> ·</span><span><b>BK Beauty</b> ·</span><span><b>Beardbrand</b> ·</span><span><b>Epic Gardening</b> ·</span><span><b>The Woobles</b> ·</span><span><b>Powered by Fable 5</b> ·</span>
+  <span><b>$500M+</b> in managed spend ·</span><span><b>100+</b> brands worked with ·</span><span><b>Orbit software included free</b> ·</span><span><b>HexClad</b> ·</span><span><b>Ridge</b> ·</span><span><b>BK Beauty</b> ·</span><span><b>Beardbrand</b> ·</span><span><b>Epic Gardening</b> ·</span><span><b>The Woobles</b> ·</span><span><b>Powered by Fable 5</b> ·</span>
+</div></div>
+
+<main data-article>
+
+<!-- WHERE THE MONEY GOES -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">The problem / 01</p>
+      <h2>Nobody is watching where the money actually goes.</h2>
+      <p>Every brand on Amazon has a person who watches ad spend, because ad spend arrives as a bill. Inventory does not send you a bill. It quietly takes your cash, sits on it, charges you rent, and occasionally loses some of it — and none of that shows up as a line item you can argue with. These are the places it leaks. Dr. Stock's whole job is to find them, price them against your real numbers, and do something about them before the next cycle.</p>
+    </div>
+    <div class="leaks">
+
+      <div class="leak">
+        <div class="lk">Leak 01</div>
+        <h3>Running out</h3>
+        <div class="txt">A stockout does not just cost you the sales you did not make that week. It costs you the rank you spent months buying, the review velocity, and the ad history — and you pay to win all of it back at a higher price than holding the units would have cost.</div>
+        <div class="txt"><b>What he does:</b> forecasts demand per SKU against real lead time and its variability, not a flat 30-day average, and tells you the date the purchase order has to leave the supplier.</div>
+      </div>
+
+      <div class="leak">
+        <div class="lk">Leak 02</div>
+        <h3>Cash trapped in the wrong SKUs</h3>
+        <div class="txt">Most catalogs have a handful of products that turn and a long tail that does not. The tail is not free — it is your working capital, converted into cardboard, sitting still. That is money you cannot spend on the products that actually sell.</div>
+        <div class="txt"><b>What he does:</b> ranks every SKU by how fast the cash comes back, flags where capital is parked, and puts a plan on the slow units instead of letting them age quietly.</div>
+      </div>
+
+      <div class="leak">
+        <div class="lk">Leak 03</div>
+        <h3>Storage and aged-inventory surcharges</h3>
+        <div class="txt">Amazon charges monthly storage, and charges more for units that have been sitting a long time. Those charges escalate on a schedule, which means the cost of a bad ordering decision keeps growing after the decision is already made.</div>
+        <div class="txt"><b>What he does:</b> watches the age bands on every SKU and raises the removal, liquidation or discount decision <b>before</b> the unit crosses into the next surcharge tier, not after.</div>
+      </div>
+
+      <div class="leak">
+        <div class="lk">Leak 04</div>
+        <h3>Fee errors on your own catalog</h3>
+        <div class="txt">FBA fees are calculated from the dimensions and weight Amazon has on file for each SKU. Those measurements are sometimes wrong, and a size-tier or dimensional-weight misclassification is a common, checkable error that quietly charges you on every single unit you ship.</div>
+        <div class="txt"><b>What he does:</b> reconciles the fee charged against the measurements on file, SKU by SKU, and where the numbers disagree he assembles the evidence and requests a re-measure through Amazon's own process.</div>
+      </div>
+
+      <div class="leak">
+        <div class="lk">Leak 05</div>
+        <h3>Shipments that don't arrive whole</h3>
+        <div class="txt">What you shipped and what Amazon booked in are not always the same number. Units go missing, get damaged in the network, or get received short — and the claim window does not stay open forever.</div>
+        <div class="txt"><b>What he does:</b> reconciles every shipment against what was received, and files documented discrepancies through Amazon's own case process, inside Amazon's stated windows.</div>
+      </div>
+
+      <div class="leak">
+        <div class="lk">Leak 06</div>
+        <h3>Returns and unfulfillable units</h3>
+        <div class="txt">Returned units come back in three states: sellable, unsellable, and never came back at all. Each one has a different correct action, and doing nothing is the expensive default because the unit keeps accruing storage while you decide.</div>
+        <div class="txt"><b>What he does:</b> tracks return reason and disposition per SKU, separates a product problem from a listing problem, and clears the unfulfillable pile deliberately.</div>
+      </div>
+
+    </div>
+    <p class="dim" style="font-size:14.5px;margin-top:26px;max-width:74ch">We are deliberately not putting a dollar figure on any of these. The honest answer is that the size depends entirely on your catalog, your margins and your lead times — and any vendor quoting you a recovery number before they have seen your account is guessing. The first thing the demo does is measure yours.</p>
+  </div>
+</section>
+
+<!-- WHERE HE TRAINED -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Where he trained / 02</p>
+      <h2>Dr. Stock did his residency inside a real agency.</h2>
+      <p>Not a forecasting startup that read some blog posts about FBA. Full Circle is a full-service Amazon agency with more than <strong style="color:var(--fg)">$500M+ in managed spend</strong> across <strong style="color:var(--fg)">100+ brands</strong> — and the operational playbooks that came out of running real catalogs, through real container delays and real Q4s, are what Dr. Stock learned from.</p>
+    </div>
+    <div class="scale">
+      <div class="sc"><div class="big">$500M+</div><div class="lbl">in managed spend across the group</div></div>
+      <div class="sc"><div class="big">100+</div><div class="lbl">brands we've worked with</div></div>
+      <div class="sc"><div class="big">Daily</div><div class="lbl">every SKU reviewed, not the ones someone had time for</div></div>
+      <div class="sc"><div class="big">Free</div><div class="lbl">the full Orbit software suite, included</div></div>
+    </div>
+    <p class="kicker" style="margin-top:44px">Brands we've worked with</p>
+    <div class="brands">
+      <div class="brand"><div class="nm">HexClad</div><div class="cat">Cookware</div></div>
+      <div class="brand"><div class="nm">Ridge</div><div class="cat">Accessories</div></div>
+      <div class="brand"><div class="nm">BK Beauty</div><div class="cat">Beauty</div></div>
+      <div class="brand"><div class="nm">Beardbrand</div><div class="cat">Grooming</div></div>
+      <div class="brand"><div class="nm">Epic Gardening</div><div class="cat">Home &amp; Garden</div></div>
+      <div class="brand"><div class="nm">The Woobles</div><div class="cat">Crafts</div></div>
+    </div>
+    <p class="dim" style="font-size:14.5px;margin-top:22px;max-width:70ch">These are eight- and nine-figure operators with catalogs in the hundreds of SKUs, seasonal demand, and supply chains that break in interesting ways. Keeping those accounts in stock and out of surcharge territory for years is where the operational knowledge comes from — the kind you cannot get from a tool's documentation.</p>
+  </div>
+</section>
+
+<!-- HOW HE THINKS -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">How he thinks / 03</p>
+      <h2>Fable 5, pointed at your whole catalog.</h2>
+      <p>The model is the engine. A decade of operating accounts is the fuel. Together they produce something no spreadsheet and no reorder alert can: a specific written plan for every SKU you sell — what to order, when, what to do with what you already own, and what to go and claim back.</p>
+    </div>
+    <div class="stack">
+      <div class="step"><div class="n">01</div><h3>Read everything</h3><div class="txt">Sales velocity, inbound shipments, on-hand and reserved units, return dispositions, fee schedules, storage age bands and settlement data — reconciled against each other, not read one report at a time.</div></div>
+      <div class="step"><div class="n">02</div><h3>Model demand per SKU</h3><div class="txt">Seasonality, promotional lift, ad pressure and trend, at the SKU level. A parent's average is not a child's forecast, and one number for the catalog is how brands end up long on the wrong colourway.</div></div>
+      <div class="step"><div class="n">03</div><h3>Model the supply side honestly</h3><div class="txt">Production time, transit, customs, receive time at the fulfilment centre — and the variance on each. The reorder date comes from the whole chain, not from a lead time somebody typed in once.</div></div>
+      <div class="step"><div class="n">04</div><h3>Price the decision</h3><div class="txt">Every recommendation is weighed in cash: what it ties up, what it frees, what it costs to hold, and what it costs to be wrong in each direction.</div></div>
+      <div class="step"><div class="n">05</div><h3>Propose or act</h3><div class="txt">Reorder quantities and dates, removals, liquidations, fee disputes, shipment claims. Either executed inside your guardrails or queued for your approval. You decide which.</div></div>
+      <div class="step"><div class="n">06</div><h3>Log every reason</h3><div class="txt">Each decision is written down with the evidence behind it and the assumption it rests on. If Dr. Stock cannot explain why he wants 900 units instead of 600, he does not ask for 900.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE CONSOLE -->
+<section id="console">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">The console / 04</p>
+      <h2>This is what he actually hands you.</h2>
+      <p>Not a stock alert. Not a red dot next to a SKU. A written supply chain update and a stack of specific recommendations — each with the evidence behind it, the assumption it depends on, and what happens if that assumption turns out to be wrong. In human-approval mode, nothing is ordered, removed or filed until you click.</p>
+    </div>
+
+    <div class="console">
+      <div class="console-bar">
+        <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="crumb">Orbit · Inventory · <b>Dr Stock™ Console</b></div>
+        <div class="badge">Human approval</div>
+      </div>
+      <div class="tabs" role="tablist">
+        <button type="button" data-tab="analysis">Weekly update</button>
+        <button type="button" data-tab="activity" class="on">Recommendations</button>
+      </div>
+
+      <div class="pane" data-pane="analysis" hidden>
+        <div class="update">
+          <div class="stamp">Supply chain update · illustrative example</div>
+          <div class="txt"><strong>The catalog is healthy on paper and tight on cash.</strong> A small group of SKUs is carrying most of the sell-through, and a much larger group is carrying most of the stored units. That is the shape of a catalog that is about to pay aged-inventory surcharges on products it is not selling, while its best products go short.</div>
+          <div class="txt">Two hero SKUs are inside the reorder window this week. One of them has a supplier whose last three shipments each ran longer than the lead time we have on file, so I have widened the assumption rather than pretending the average holds.</div>
+          <div class="txt">Separately, the fee reconciliation flagged a size-tier mismatch: the dimensions on file for one SKU do not agree with the carton spec you gave us. That is a checkable disagreement, so I have drafted a re-measure request through Amazon's own process rather than assuming who is right.</div>
+          <div class="txt"><strong>Three recommendations are waiting for you. Nothing has been ordered, removed or filed.</strong></div>
+        </div>
+      </div>
+
+      <div class="pane" data-pane="activity">
+        <div class="props">
+
+          <div class="prop">
+            <div class="prop-top">
+              <span class="tag act">Reorder</span>
+              <span class="tag">Hero SKU</span>
+              <span class="tag wait">Awaiting approval</span>
+            </div>
+            <h4>Raise the next purchase order on <code>SKU-4471</code> and move it forward by two weeks</h4>
+            <dl class="rows">
+              <div class="row"><dt>Evidence</dt><dd>Cover is falling faster than the current reorder point assumes, and this supplier's <b>last three shipments each ran longer than the lead time on file</b>. Holding the old date puts the SKU out of stock before the container lands.</dd></div>
+              <div class="row"><dt>Assumption</dt><dd>Demand continues at its trailing rate through the season, and transit runs to the widened lead time rather than the historical average.</dd></div>
+              <div class="row rb"><dt>If wrong</dt><dd>If demand softens, the downside is <b>extra weeks of cover on a SKU that turns</b> — the cheap direction to be wrong in. Reviewed again the moment the shipment is booked.</dd></div>
+            </dl>
+            <div class="actions">
+              <span class="approve">Approve and send to supplier</span>
+              <span class="reject">Reject</span>
+              <span class="mock-note">Level 1 · your click required</span>
+            </div>
+          </div>
+
+          <div class="prop">
+            <div class="prop-top">
+              <span class="tag act">Fee dispute</span>
+              <span class="tag">Dimensional weight</span>
+              <span class="tag wait">Awaiting approval</span>
+            </div>
+            <h4>Request a re-measure on <code>SKU-2210</code> — size tier on file disagrees with the carton spec</h4>
+            <dl class="rows">
+              <div class="row"><dt>Evidence</dt><dd>The dimensions Amazon has on file place this SKU one size tier above the packed carton spec supplied by your manufacturer. <b>The two documents disagree</b>, and the higher tier has been applied to every unit shipped.</dd></div>
+              <div class="row"><dt>Action</dt><dd>Submit a re-measure request through Amazon's own case process with the carton spec attached. No claim of an amount is made — the correct fee is whatever the re-measure returns.</dd></div>
+              <div class="row rb"><dt>If wrong</dt><dd>If Amazon's measurement is confirmed correct, <b>the tier stands and nothing changes</b> except that we stop flagging it. The check costs a case, not a risk.</dd></div>
+            </dl>
+            <div class="actions">
+              <span class="approve">Approve and file the case</span>
+              <span class="reject">Reject</span>
+              <span class="mock-note">Level 2 · would auto-file</span>
+            </div>
+          </div>
+
+          <div class="prop">
+            <div class="prop-top">
+              <span class="tag act">Aged inventory</span>
+              <span class="tag">Long tail</span>
+              <span class="tag done">Applied · logged</span>
+            </div>
+            <h4>Clear the aged units on <code>SKU-9033</code> before the next surcharge band</h4>
+            <dl class="rows">
+              <div class="row"><dt>Evidence</dt><dd>These units are approaching the next aged-inventory band at their current sell-through rate. <b>At that rate they cross the band before they sell through</b>, and the holding cost steps up while the demand does not.</dd></div>
+              <div class="row"><dt>Decision</dt><dd>Compared three options in cash terms — hold, discount to clear, remove — and took the one that returns the most capital net of the fees involved. The comparison is in the log.</dd></div>
+              <div class="row rb"><dt>If wrong</dt><dd>If sell-through recovers before the units are cleared, <b>the remainder stays in the fulfilment centre</b> and the plan is re-run against the new rate.</dd></div>
+            </dl>
+            <div class="actions">
+              <span class="reject" style="border-color:rgba(0,255,157,.3);color:var(--accent)">View in decision log</span>
+              <span class="mock-note">Level 3 · applied inside guardrails, logged</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="shot-cap">Dr Stock™ Console — representative view. SKUs and wording are an illustrative example, not a client account, and not a prediction of any outcome.</div>
+  </div>
+</section>
+
+<!-- APPROVAL LEVELS -->
+<section id="approval">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Your call / 05</p>
+      <h2>You choose how much he does on his own.</h2>
+      <p>"Autonomous" is not one setting, and it should never be the vendor's decision — least of all when the decisions spend your money on stock. Dr. Stock runs at whichever of these three levels you pick, and you can change it any time, without renegotiating anything. Some brands sit at Level 1 through their first season, read the log, and move up. Some never do. Both are fine.</p>
+    </div>
+
+    <div class="levels">
+      <div class="lev l1">
+        <div class="lv">Level 01</div>
+        <h3>Full human approval</h3>
+        <div class="txt">Dr. Stock does all the analysis and proposes every decision. Nothing is ordered, removed or filed without a human clicking approve.</div>
+        <ul>
+          <li>Every reorder, removal, liquidation, fee dispute and claim arrives as a recommendation card</li>
+          <li>Each card carries the evidence, the assumption it rests on, and what happens if that assumption breaks</li>
+          <li>Approve, reject, or approve in bulk — one click each</li>
+          <li>Rejections are read back into the model, so he stops proposing what you keep refusing</li>
+        </ul>
+        <div class="foot"><b>The reorder above</b>Sits in the queue until you click "Approve and send to supplier".</div>
+      </div>
+
+      <div class="lev l2">
+        <div class="lv">Level 02</div>
+        <h3>Supervised autonomy</h3>
+        <div class="txt">The routine, low-risk, well-evidenced work runs on its own inside guardrails you set. Anything above your threshold queues for approval.</div>
+        <ul>
+          <li>Runs on its own: shipment reconciliation, documented claims, fee re-measure requests, routine removals of unfulfillable units</li>
+          <li>Queues for you: purchase orders, anything above your value threshold, new SKUs, first orders with a new supplier</li>
+          <li>You set the band — order values, removal thresholds, which SKUs are untouchable</li>
+          <li>Daily digest of what ran automatically, with the same evidence attached</li>
+        </ul>
+        <div class="foot"><b>The fee dispute above</b>A documented, checkable mismatch — filed automatically, logged, nothing irreversible.</div>
+      </div>
+
+      <div class="lev l3">
+        <div class="lv">Level 03</div>
+        <h3>Fully autonomous</h3>
+        <div class="txt">Dr. Stock runs the supply chain inside agreed guardrails. You review the log and the outcomes rather than each decision.</div>
+        <ul>
+          <li>Every decision is still written down with its reasoning and its evidence</li>
+          <li>Every decision still names the assumption it depends on and what happens if it breaks</li>
+          <li>Guardrails are yours: capital ceilings, maximum order values, cover targets, protected SKUs, approved suppliers</li>
+          <li>Weekly written supply chain update; drop back to Level 1 at any moment</li>
+        </ul>
+        <div class="foot"><b>The aged-inventory decision above</b>Compared in cash, executed inside the guardrail, and written into the log the same morning.</div>
+      </div>
+    </div>
+
+    <p class="kicker" style="margin-top:46px">What does not change between levels</p>
+    <div class="constant">
+      <div class="const"><h4>The same evidence trail</h4><div class="txt">Level 3 is not a quieter product. Every decision produces the identical written record — you are choosing whether to read it before or after.</div></div>
+      <div class="const"><h4>The same stated assumptions</h4><div class="txt">Nothing is executed without naming what it depends on. Autonomy raises the speed, not the confidence.</div></div>
+      <div class="const"><h4>The same hard limits</h4><div class="txt">The list below is off-limits at every level, including Level 3. Full autonomy does not mean unlimited authority over your bank account.</div></div>
+      <div class="const"><h4>The same switch, both ways</h4><div class="txt">Move up when you trust it, drop back the week your supplier gets interesting. Month-to-month, so there is nothing to renegotiate.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT HE WATCHES -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">What he watches / 06</p>
+      <h2>Awareness most ops teams don't have on their best day.</h2>
+      <p>A person watches a handful of these, on the SKUs they have time for, in the week they are not firefighting. Dr. Stock watches all of them, on every SKU, every day.</p>
+    </div>
+    <div class="watch">
+      <div class="w"><h3>Days of cover</h3><div class="txt">Per SKU, against real velocity and real lead time — not a flat average that flatters the slow movers.</div></div>
+      <div class="w"><h3>Reorder timing</h3><div class="txt">The date the order has to leave the supplier, worked back through production, transit, customs and receive time.</div></div>
+      <div class="w"><h3>Lead time variance</h3><div class="txt">Not just how long it usually takes, but how wrong it has recently been — which is the number that causes stockouts.</div></div>
+      <div class="w"><h3>Capital by SKU</h3><div class="txt">How much of your cash each product is holding, and how fast that cash is coming back.</div></div>
+      <div class="w"><h3>Storage age bands</h3><div class="txt">Which units are drifting toward the next surcharge tier, with time left to do something about it.</div></div>
+      <div class="w"><h3>Fee accuracy</h3><div class="txt">Charged fees reconciled against the dimensions, weights and size tiers Amazon has on file for each SKU.</div></div>
+      <div class="w"><h3>Shipment reconciliation</h3><div class="txt">Shipped versus received, unit by unit, with claim windows tracked before they close.</div></div>
+      <div class="w"><h3>Returns and dispositions</h3><div class="txt">What came back, what state it came back in, and whether the reason is a product problem or a listing problem.</div></div>
+      <div class="w"><h3>Buy box and listing health</h3><div class="txt">Suppressions, buy box loss and stranded inventory — units you own that nobody can currently buy.</div></div>
+      <div class="w"><h3>Seasonality and promo lift</h3><div class="txt">Demand that is about to move for a reason, so the order goes in before the season rather than during it.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTONOMY LADDER -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Honesty / 07</p>
+      <h2>What he does alone — and what he never does.</h2>
+      <p>Everyone in this category says "autonomous" and nobody defines it. So here is ours, in public. The right-hand column applies at <strong style="color:var(--fg)">every</strong> approval level, including Level 3 — these are not permissions you can switch on.</p>
+    </div>
+    <div class="ladder">
+      <div class="lcol auto"><h3>Runs unattended</h3><ul>
+        <li>Forecasts demand and recalculates days of cover on every SKU, daily</li>
+        <li>Works out the reorder date and quantity, and flags it before the window closes</li>
+        <li>Reconciles every inbound shipment against what was received</li>
+        <li>Assembles documented claims and files them through Amazon's own case process</li>
+        <li>Reconciles charged fees against the measurements on file and requests re-measures where they disagree</li>
+        <li>Tracks storage age bands and raises the decision before the next tier</li>
+        <li>Clears unfulfillable units and flags stranded inventory</li>
+        <li>Writes the weekly supply chain update with the reasoning attached</li>
+      </ul></div>
+      <div class="lcol human"><h3>Always needs a human</h3><ul>
+        <li>Committing your capital — purchase orders leave when a person says so, unless you decide otherwise in writing</li>
+        <li>Choosing or changing a supplier, and anything about the terms</li>
+        <li>Launching a new product or entering a new category</li>
+        <li>Pricing and promotional decisions</li>
+        <li>Anything depending on information he cannot see — a factory closure, a quality problem, a container you already know is late</li>
+        <li>Writing off inventory, and any decision with a tax or accounting consequence</li>
+        <li>Deciding what level of stockout risk your business is willing to carry</li>
+      </ul></div>
+    </div>
+    <p class="mono dim" style="font-size:12.5px;margin-top:20px;max-width:70ch">If a vendor won't show you this table, ask them why.</p>
+  </div>
+</section>
+
+<!-- ORBIT INCLUDED -->
+<section id="orbit">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Orbit, included / 08</p>
+      <h2>The whole software suite comes with him. Free.</h2>
+      <p>Dr. Stock lives inside <strong style="color:var(--fg)">Orbit</strong> — Full Circle's full Amazon software suite. Inventory, finance, sales, advertising, search terms, keywords, traffic, ASIN-level profitability, and a set of trackers that watch your BSR, buy box, price and fee changes for you. This is software other companies charge a monthly subscription for. With Dr. Stock it is included at no extra cost.</p>
+    </div>
+
+    <p class="kicker">What's in the suite</p>
+    <div class="orbit-grid">
+      <div class="mod">
+        <div class="g">Inventory &amp; supply</div>
+        <ul>
+          <li>Inventory<span>On hand, inbound, reserved, and days of cover per SKU</span></li>
+          <li>Reorder planning<span>Quantities and dates worked back through the whole chain</span></li>
+          <li>Aged inventory<span>Storage age bands and what is drifting toward the next tier</span></li>
+          <li>Shipments<span>Shipped versus received, with claim windows tracked</span></li>
+          <li>Dr Stock™ Console<span>The analysis, the recommendations and the decision log</span></li>
+        </ul>
+      </div>
+      <div class="mod">
+        <div class="g">Finance &amp; profit</div>
+        <ul>
+          <li>Finance<span>Fees, reimbursements and contribution profit</span></li>
+          <li>ASINs<span>Per-product economics down to the SKU</span></li>
+          <li>Fee reconciliation<span>Charged fees against the measurements on file</span></li>
+          <li>Cash view<span>How much capital each product is holding, and how fast it returns</span></li>
+          <li>Sales<span>Revenue, units and trend by marketplace</span></li>
+        </ul>
+      </div>
+      <div class="mod">
+        <div class="g">Trackers &amp; alerts</div>
+        <ul>
+          <li>BSR Tracker<span>Best-seller rank movement by ASIN</span></li>
+          <li>BuyBox Tracker<span>Ownership and loss events</span></li>
+          <li>Price Tracker<span>Yours and the competition's</span></li>
+          <li>Fee Tracker<span>Amazon fee changes before they surprise you</span></li>
+          <li>Alerts &amp; notifications<span>Suppressions, stockouts, stranded units and anomalies</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="kicker" style="margin-top:48px">Inventory — the view every morning</p>
+    <div class="tablewrap stmini" style="margin-top:16px"><table>
+      <thead><tr><th>SKU</th><th>Status</th><th>Cover</th><th>Inbound</th><th>Storage age</th><th>Next action</th></tr></thead>
+      <tbody>
+        <tr><td>SKU-4471</td><td><span class="op lo">Reorder now</span></td><td>Short</td><td>None booked</td><td>Fresh</td><td style="color:var(--rose)">PO must leave supplier</td></tr>
+        <tr><td>SKU-2210</td><td><span class="op md">Fee mismatch</span></td><td>Healthy</td><td>In transit</td><td>Fresh</td><td style="color:var(--amber)">Re-measure request</td></tr>
+        <tr><td>SKU-9033</td><td><span class="op md">Ageing</span></td><td>Long</td><td>None booked</td><td>Approaching band</td><td style="color:var(--amber)">Clear before next tier</td></tr>
+        <tr><td>SKU-1180</td><td><span class="op hi">Healthy</span></td><td>On target</td><td>Booked</td><td>Fresh</td><td style="color:var(--accent)">No action</td></tr>
+        <tr><td>SKU-7702</td><td><span class="op lo">Stranded</span></td><td>—</td><td>None</td><td>Fresh</td><td style="color:var(--rose)">Listing fix, units unsellable</td></tr>
+      </tbody>
+    </table></div>
+    <div class="shot-cap">Representative rows from the Inventory view. Illustrative example — the real view carries the numbers for your own catalog.</div>
+
+    <div class="free-band">
+      <h3>Included, not upsold.</h3>
+      <div class="txt">Orbit comes with Dr. Stock at no additional charge — there is no separate software line on the invoice, no per-seat pricing and no tier you have to upgrade into to see your own cash position. You keep access to every module listed above for as long as Dr. Stock is on the account.</div>
+    </div>
+  </div>
+</section>
+
+<!-- THIRD CATEGORY -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">The third category / 09</p>
+      <h2>You've had two bad options. This is the third.</h2>
+      <p>Inventory software hands you a forecast and wishes you luck. Hiring for it gets you one person, on the SKUs they can reach, in the weeks they are not firefighting. Dr. Stock is the thing in between that nobody was selling.</p>
+    </div>
+    <div class="tablewrap"><table>
+      <thead><tr><th></th><th>Inventory software</th><th>An ops hire or a 3PL</th><th class="us">Dr. Stock</th></tr></thead>
+      <tbody>
+        <tr><td>Who does the work</td><td>You do</td><td>A person, some of the time</td><td class="us">Fable 5, every day</td></tr>
+        <tr><td>Catalog reviewed</td><td>When you log in</td><td>The SKUs there is time for</td><td class="us">Every SKU, daily</td></tr>
+        <tr><td>Who approves decisions</td><td>You, manually</td><td>Them, told to you later</td><td class="us">Your choice of three levels</td></tr>
+        <tr><td>Reason for each decision</td><td>A formula you configured</td><td>Ask on the next call</td><td class="us">Written, with the assumption named</td></tr>
+        <tr><td>Fee errors and claims</td><td>Not its job</td><td>If someone gets to it</td><td class="us">Reconciled and filed continuously</td></tr>
+        <tr><td>Cash view</td><td>Units, not capital</td><td>Lives in a spreadsheet</td><td class="us">Every SKU priced in cash</td></tr>
+        <tr><td>Human expertise</td><td>None included</td><td>Varies with who you hired</td><td class="us">Operators from a $500M+ team</td></tr>
+        <tr><td>Commitment</td><td>Annual contract</td><td>A salary</td><td class="us">Month-to-month</td></tr>
+        <tr><td>Software included</td><td>It is the software</td><td>Billed separately</td><td class="us">Full Orbit suite, free</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="section-head" style="text-align:center;margin:0 auto 40px">
+      <p class="kicker">Price / 10</p>
+      <h2>Start free. Then a number we agree out loud.</h2>
+    </div>
+    <div class="price-card">
+      <div class="price-num">First 30 days<small> free</small></div>
+      <div class="price-terms"><span>No contract</span><span>No onboarding fee</span><span>Month-to-month</span><span>Orbit included</span></div>
+      <ul class="incl">
+        <li>Fable 5 working your catalog every day</li>
+        <li>A written plan per SKU — order, hold, clear or claim</li>
+        <li>Your choice of approval level — change it whenever you like</li>
+        <li>Every decision logged with its evidence and its assumption</li>
+        <li>Fee and shipment reconciliation, filed through Amazon's own process</li>
+        <li>Operators from a $500M+ Amazon team supervising</li>
+        <li>Full supply chain and cash diagnosis on day one</li>
+        <li><strong style="color:var(--fg)">The complete Orbit software suite, free</strong></li>
+        <li>Leave whenever you want</li>
+      </ul>
+      <div class="price-note">We are not publishing a number for Dr. Stock yet, and we would rather say that than invent one. The right shape depends on the size of your catalog and where your money is actually going — so we quote it on the call, in writing, before you have spent anything. The first 30 days are free either way.</div>
+      <div style="margin-top:32px">
+        <a class="btn" href="#demo" data-cta="pricing">Book a demo call →</a>
+        <span class="btn-sub">First 30 days free. Pricing discussed on the call.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap narrow">
+    <div class="section-head"><p class="kicker">Questions / 11</p><h2>The things people actually ask.</h2></div>
+    <div class="faq">
+      <details open><summary>What happens in the first 30 days?</summary><div class="txt">Dr. Stock reads the catalog, models demand and lead times per SKU, reconciles your fees and shipments, and tells you where your cash currently is. You get the written plan and the daily loop from day one. Most brands start at Level 1 so they can read every recommendation before it does anything. You pay nothing. If it has not earned the second month by day 30, we shake hands and part ways.</div></details>
+      <details><summary>What does it cost after that?</summary><div class="txt">We quote it on the call, in writing, once we have seen the catalog. We are deliberately not putting a number on this page for a product whose right shape depends on how many SKUs you carry and where the money is going. There is no onboarding fee, no contract, and Orbit is included at no additional charge.</div></details>
+      <details><summary>Does he place purchase orders with my supplier?</summary><div class="txt">Only if you explicitly turn that on, and only inside limits you set. By default he produces the reorder recommendation — quantity, the date it has to leave the supplier, and the assumptions behind it — and a human sends it. Money leaving your bank account is a human decision unless you decide otherwise.</div></details>
+      <details><summary>How does the fee and claim work actually work?</summary><div class="txt">Two reconciliations. He compares what you shipped against what Amazon received, and he compares the fees charged against the dimensions and weights Amazon has on file for each SKU. Where there is a documented, checkable disagreement, he assembles the evidence and files through Amazon's own case process, inside Amazon's stated windows. We do not promise a recovery figure, because nobody honestly can — the correct answer is whatever the reconciliation returns.</div></details>
+      <details><summary>Can I keep approval on everything?</summary><div class="txt">Yes — that is Level 1, and plenty of accounts stay there through their first season. Dr. Stock still does all the analysis and writes every recommendation; he just waits for your click. You can move up later, or move back down, at any time and without renegotiating your agreement.</div></details>
+      <details><summary>If I go fully autonomous, what stops a bad decision?</summary><div class="txt">Three things. Guardrails you set before he starts — capital ceilings, maximum order values, cover targets, protected SKUs, approved suppliers. An assumption named on every single decision, so a plan built on a lead time that turns out to be wrong is re-run rather than defended. And the hard limits in the ladder above, which apply at every level: supplier choice, pricing, new launches, write-offs and anything he cannot see always come to a human.</div></details>
+      <details><summary>Do you replace my 3PL or my ops person?</summary><div class="txt">No. Dr. Stock decides what to order, when, and what to do with what you already own. Your 3PL still moves boxes and your ops person still handles the relationships and the exceptions — the part of the job that actually needs a human. What changes is that the decision arrives already worked out, every day, on every SKU, instead of at the end of a spreadsheet evening.</div></details>
+      <details><summary>Is Orbit really included?</summary><div class="txt">Yes. The full suite — inventory, finance, sales, advertising, ASIN profitability, the BSR, buy box, price and fee trackers, and the Dr Stock Console itself — comes with the service at no additional charge. There is no separate software line on your invoice and no tier you have to buy up into to see your own numbers.</div></details>
+      <details><summary>Is this just a reorder alert with a marketing name?</summary><div class="txt">No. A reorder point fires when a number crosses a line you configured. Fable 5 models demand and supply per SKU against your real economics, prices each option in cash, then writes the decision down with the assumption it rests on — so you can audit the thinking, not just the alert.</div></details>
+      <details><summary>Can I run Dr. Stock and Dr. PPC together?</summary><div class="txt">Yes, and it is the combination we would pick. Ads and inventory are the same decision seen from two ends — there is no point buying rank for a product that is three weeks from going out of stock, and no point holding stock nobody is driving traffic to. Both live in the same Orbit account and read the same numbers.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="demo" style="border-bottom:none">
+  <div class="wrap cta-final">
+    <p class="kicker">Start / 12</p>
+    <h2 style="margin-top:14px">Put Dr. Stock on your catalog.</h2>
+    <div class="lede" style="margin:18px auto 0">Twenty minutes. We will look at your real catalog, show you where your cash is currently sitting, and let you pick the approval level you are comfortable with. The first 30 days are free either way — and Orbit comes with it.</div>
+    <div style="margin-top:30px">
+      <a class="btn" href="https://calendly.com/jayce-remktr/30min" data-cta="footer">Book a demo call →</a>
+      <span class="btn-sub">No contract. No onboarding fee. Cancel anytime.</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- THE FAMILY -->
+<section style="border-bottom:none;padding-bottom:40px">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">The rest of the family</p>
+      <h2>Dr. Stock is one of five. Here's when you'd want a different one.</h2>
+      <p>These are built by the same group, on the same data, and they are genuinely different purchases. If one of the descriptions below sounds more like your actual problem than this page does, go there instead — we would rather you bought the right thing.</p>
+    </div>
+    <div class="family">
+      <a class="fam" href="https://drppc.ai" rel="noopener">
+        <div class="nm">Dr. PPC</div>
+        <div class="url">drppc.ai</div>
+        <div class="txt">The same idea pointed at advertising instead of inventory. Take this one if your ad account is the thing bleeding — bids, negatives, budgets and placements managed daily at the approval level you choose. Most brands end up running both, because a stockout and a wasted click are the same problem from opposite ends.</div>
+      </a>
+      <a class="fam" href="https://drdsp.ai" rel="noopener">
+        <div class="nm">Dr. DSP</div>
+        <div class="url">drdsp.ai</div>
+        <div class="txt">Amazon DSP run as a managed product. Take this one if you have already got sponsored ads working and the growth question has become reach — retargeting, audiences and off-Amazon inventory — rather than another point of ACoS.</div>
+      </a>
+      <a class="fam" href="https://fullcircleorbit.com" rel="noopener">
+        <div class="nm">Orbit</div>
+        <div class="url">fullcircleorbit.com</div>
+        <div class="txt">The software suite by itself. Take this one if you have a capable team and what you are missing is the numbers in one place — inventory, finance, ASIN profitability and the trackers — rather than someone to act on them. It is included free with Dr. Stock, so this is the route for brands who only want the screens.</div>
+      </a>
+      <a class="fam" href="https://fullcircleagency.com" rel="noopener">
+        <div class="nm">Full Circle</div>
+        <div class="url">fullcircleagency.com</div>
+        <div class="txt">The full-service Amazon agency behind all of it. Take this one if the job is bigger than any single system — listings, creative, catalog strategy, marketplace expansion — and you want people on it, not just a product.</div>
+      </a>
+      <a class="fam" href="https://remktr.com" rel="noopener">
+        <div class="nm">reMKTR</div>
+        <div class="url">remktr.com</div>
+        <div class="txt">Amazon DSP media buying as a service. Take this one if you are a brand or an agency that wants DSP bought and run by a team, with the trading desk work handled rather than productised.</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <div class="fine">
+    <strong style="color:var(--fg);font-family:var(--display)">Dr. Stock</strong> — an Orbit product, operated by the Full Circle group. Powered by Fable 5.<br />
+    Brands shown are companies our agency has worked with. The console and inventory views on this page are illustrative examples with invented SKU codes — not a client account and not a prediction. Fee reconciliation and shipment claims are filed through Amazon's own case process, within Amazon's stated windows; no recovery amount is promised. Results vary by brand, category, catalog and supply chain; nothing here is a guarantee of outcome. Dr. Stock is a character representing the system — the operators supervising him are real people.
+  </div>
+</div></footer>
+
+
+<link rel="stylesheet" href="/assets/engagement.css">
+<script>window.FC_CTA={ga4:'G-DRSTOCKTBD',brand:'dr-stock',href:'https://calendly.com/jayce-remktr/30min',
+label:'Book a demo call',sub:'First 30 days free. No contract.',
+popup:{title:'Find out where your cash is sitting',body:'Twenty minutes on your real catalog. We show you the reorder dates, the aged units and the fee mismatches Fable 5 finds, and you pick the approval level. Orbit is included, and the first 30 days are free.',label:'Book a demo call'}};</script>
+<script src="/assets/engagement.js" defer></script>
+</body>
+</html>
