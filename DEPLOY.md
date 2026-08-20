@@ -10,10 +10,30 @@ Publishing a change is just: commit, push to `main`, wait ~1 minute.
 
 ## Current state
 
-- GitHub Pages: **enabled**, `main` / root.
-- Custom domain set in the repo: **drstock.ai** (the `CNAME` file in this repo).
+- GitHub Pages: **enabled and built**, `main` / root.
+- Custom domain: **drstock.ai**, applied automatically from the `CNAME` file in
+  this repo when Pages first built. It has deliberately **not** been re-saved
+  through the API — see the warning below for why that matters.
+- HTTPS certificate: **not issued yet**, and cannot be until DNS moves. This is
+  expected, not a fault.
 - DNS for drstock.ai: **still pointing at Squarespace.** Nothing has been changed.
-- Until DNS moves, the live page is only reachable at the github.io Pages URL.
+
+### How to view the page before DNS moves
+
+Because a custom domain is set, `https://kfree108.github.io/drstock-site/`
+returns a `301` redirect to `http://drstock.ai/` — which is still Squarespace.
+So there is no ordinary URL that shows the real page right now.
+
+To confirm GitHub is genuinely serving the right content, ask GitHub's edge for
+the site directly, bypassing DNS:
+
+```sh
+curl -s -H "Host: drstock.ai" http://185.199.108.153/ | grep '<title>'
+```
+
+That returned the Dr. Stock title on 20 August 2026, so the deploy itself is
+good. The moment the A records below are changed, `https://drstock.ai` shows
+this page with no further work in the repo.
 
 ## Why the domain still shows nothing useful
 
