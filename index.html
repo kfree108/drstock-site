@@ -268,6 +268,20 @@ tbody tr:last-child td{border-bottom:none;}
 footer{padding:40px 0 60px;}
 footer .fine{font-family:var(--mono);font-size:11.5px;color:#8b8898;max-width:62ch;line-height:1.7;}
 .cta-final{text-align:center;}
+/* --- nav-anchor-block --- */
+/* ── in-page nav ─────────────────────────────────────────────────────────
+   The top bar carries ONE link out of the page — the knowledge hub. Every
+   other item jumps to a section below, so the header stops competing with
+   the article hubs for the same click. */
+html{scroll-behavior:smooth}
+section[id],header[id]{scroll-margin-top:84px}
+nav.top ul a[href^="#"]{opacity:.82}
+nav.top ul a[href^="#"]:hover{opacity:1;color:var(--accent)}
+.navhub{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent);border:1px solid rgba(var(--accent-rgb),.42);border-radius:7px;
+  padding:7px 12px;text-decoration:none;white-space:nowrap;transition:background .15s,border-color .15s}
+.navhub:hover{background:rgba(var(--accent-rgb),.1);border-color:var(--accent)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 <style>/* the bar now carries a section link */
 nav.top ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
@@ -279,7 +293,9 @@ nav.top ul a:hover{color:var(--accent)}
 
 <nav class="top"><div class="wrap">
   <div class="logo">Dr. <span>Stock</span></div>
-  <ul><li><a href="/learn/">Inventory Guides</a></li></ul><a class="navcta" href="#demo" data-cta="nav">Book a Dr. Stock demo →</a>
+  <ul><li><a href="/learn/">Inventory Guides</a></li></ul>
+  <a class="navhub" href="/learn/">Inventory Guides</a>
+  <a class="navcta" href="#demo" data-cta="nav">Book a Dr. Stock demo →</a>
 </div></nav>
 
 <!-- HERO -->
@@ -311,7 +327,7 @@ nav.top ul a:hover{color:var(--accent)}
   <span><b>$500M+</b> in managed spend ·</span><span><b>100+</b> brands worked with ·</span><span><b>Orbit software included free</b> ·</span><span><b>HexClad</b> ·</span><span><b>Ridge</b> ·</span><span><b>BK Beauty</b> ·</span><span><b>Beardbrand</b> ·</span><span><b>Epic Gardening</b> ·</span><span><b>The Woobles</b> ·</span><span><b>Powered by Fable 5</b> ·</span>
 </div></div>
 
-<main data-article>
+<main data-no-autocta>
 
 <!-- WHERE THE MONEY GOES -->
 <section>
@@ -819,6 +835,7 @@ nav.top ul a:hover{color:var(--accent)}
 </section>
 
 <footer><div class="wrap">
+  <div class="flinks" data-hubrow><a href="/learn/">Inventory Guides</a><a href="/compare/">Compare</a></div>
   <div class="fine">
     <strong style="color:var(--fg);font-family:var(--display)">Dr. Stock</strong> — an Orbit product, operated by the Full Circle group. Powered by Fable 5.<br />
     Brands shown are companies our agency has worked with. The console and inventory views on this page are illustrative examples with invented SKU codes — not a client account and not a prediction. Fee reconciliation and shipment claims are filed through Amazon's own case process, within Amazon's stated windows; no recovery amount is promised. Results vary by brand, category, catalog and supply chain; nothing here is a guarantee of outcome. Dr. Stock is a character representing the system — the operators supervising him are real people.
