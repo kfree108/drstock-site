@@ -40,9 +40,9 @@
       starters: ['What makes a main image convert on Amazon?', 'How many images should my listing have, and what goes in each?', 'My clicks are fine but conversion is low. Is it my images?', 'What are the main-image rules brands still break?', 'How fast can you build a full image stack?']
     },
     'dr-shield': {
-      name: 'Dr. Shield', role: 'Account protection', org: 'Orbit', accent: '#5aa9ff', grad: 'linear-gradient(135deg,#93c5fd 0%,#3b82f6 100%)', ink: '#04182e',
-      launch: 'Talk to Dr. Shield about protecting your account.', sub: 'On watch · every hour',
-      hello: 'I\'m Dr. Shield. My job is to make sure growth doesn\'t get erased overnight: hijackers, lost Buy Box, compliance flags.\n\nWhat\'s worrying you, or pick one below.',
+      name: 'Dr. Shield', role: 'Account & brand protection', org: 'Orbit', accent: '#5aa9ff', grad: 'linear-gradient(135deg,#93c5fd 0%,#3b82f6 100%)', ink: '#04182e',
+      launch: 'Talk to Dr. Shield about protecting your account.', sub: 'On watch · every hour, 24/7',
+      hello: 'I\'m Dr. Shield. I check every ASIN every hour, 24/7, so growth doesn\'t get erased overnight: hijackers, lost Buy Box, compliance flags. When something\'s wrong, I build the case and our team files it the same day.\n\nWhat\'s worrying you, or pick one below.',
       starters: ['Someone is selling on my listing. What do I do first?', 'I lost the Buy Box. How do I find out why?', 'How do I launch a new product without a compliance flag?', 'My listing was suppressed. Where do I start?', 'How do I spot counterfeit complaints before they hurt me?']
     },
     jacob: {

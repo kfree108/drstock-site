@@ -132,16 +132,16 @@ var AGENTS=[
     '<div class="os-bmeta"><span class="os-x">Main image · prop in frame</span><span>Text too small on mobile · slot 3</span><span>Brief drafted · 3 images</span></div></div>';},
   chat:{me:'Score our image stack.',tools:['score_image_stack','check_main_image'],
    bot:'The main image fails compliance — there’s a prop in frame. I’ve drafted the brief for a compliant main and two rewrites.',acts:['Create images','Apply to listing']}},
- {id:'dr-shield',name:'Dr. Shield',role:'Account protection',area:'Account protection',status:'On watch',c:'#5aa9ff',cl:'#b5d8ff',cd:'#1d4f8c',
-  line:'Watches for hijackers, Buy Box changes and compliance issues — so you hear about them first.',
-  caps:['Hijacker watch','Buy Box watch','Compliance watch'],
+ {id:'dr-shield',name:'Dr. Shield',role:'Account & brand protection',area:'Account & brand protection',status:'On watch',c:'#5aa9ff',cl:'#b5d8ff',cd:'#1d4f8c',
+  line:'Watches every ASIN every hour, 24/7, for hijackers, Buy Box changes and compliance issues. Found, built and filed for you — our team handles the Amazon side, same day.',
+  caps:['Every ASIN, every hour, 24/7','Hijacker, Buy Box & compliance watch','Cases filed by our team, same day'],
   card:function(){return '<div class="os-card">'+head('Account watch · last 24 hours','3 signals · 1 to review today')+
     '<div class="os-alerts"><div class="os-al"><span class="os-sev os-hi">Act today</span><span><b>New seller on your hero ASIN</b><small>Joined 06:12 · evidence collected</small></span><span></span></div>'+
     '<div class="os-al"><span class="os-sev os-md">Watch</span><span><b>Title changed on Night Cream 1.7oz</b><small>Catalog contribution · previous version saved</small></span><span></span></div>'+
     '<div class="os-al"><span class="os-sev os-ok">Steady</span><span><b>No new policy warnings</b><small>Account health checked 07:00</small></span><span></span></div></div>'+
     '<div class="os-bbx"><small>Buy Box share · hero ASIN</small><b>64%<span>from 100% · 18 hours</span></b><div class="os-chart" data-c="bb"></div></div></div>';},
   chat:{me:'Anything I should know about this morning?',tools:['get_offer_changes','get_buy_box_share'],
-   bot:'A <strong>new seller joined your hero ASIN</strong> at 06:12 and your Buy Box share is at 64%. Evidence is collected and next steps are drafted for you.',acts:['Review evidence','Draft next steps']}},
+   bot:'A <strong>new seller joined your hero ASIN</strong> at 06:12 and your Buy Box share is at 64%. Evidence is collected and the case is built — our team files it with Amazon today.',acts:['Review evidence','See the case']}},
  {id:'dr-dsp',name:'Dr. DSP',role:'Audience network',area:'Audience network',status:'Mapping audiences',c:'#b97aff',cl:'#e0c8ff',cd:'#53298c',
   line:'Finds new-to-brand shoppers across Amazon’s audience network — and shows which touches actually earned the sale.',
   caps:['Amazon’s audience network','Multi-touch attribution','New-to-brand growth'],
@@ -212,8 +212,8 @@ P.build=function(){
   h+='<div class="os-panel">';
   // head
   h+='<div class="os-head"><div><span class="os-kick">'+LOGO+'The whole team · Included free</span>'+
-     '<h2 class="os-h2" id="'+id+'-t">Hire one Doctor.<br><span class="os-gt">Get the whole hospital.</span></h2></div>'+
-     '<div><p class="os-sub">Every Doctor comes with <b>all of Orbit</b> — the operating system for your Amazon account, and six AI agents working together on every part of it, every day. <b>Included free.</b></p>'+
+     '<h2 class="os-h2" id="'+id+'-t">'+(cur==='bruno'?'Hire Bruno.<br><span class="os-gt">Get the whole Orbit team, free.</span>':(cur==='ava'?'Meet Ava.<br><span class="os-gt">Get the whole Orbit team.</span>':'Hire one Doctor.<br><span class="os-gt">Get the whole hospital.</span>'))+'</h2></div>'+
+     '<div><p class="os-sub">'+(cur==='bruno'?'Bruno comes with':'Every Doctor comes with')+' <b>all of Orbit</b> — the operating system for your Amazon account, and six AI agents working together on every part of it, every day. <b>Included free.</b></p>'+
      '<ul class="os-cov" aria-label="What the team covers">'+AGENTS.map(function(a){return '<li style="'+vars(a)+'">'+esc(a.area)+' · <b>'+esc(a.name)+'</b></li>';}).join('')+'</ul></div></div>';
   // included strip
   h+='<div class="os-incl"><div class="os-incl-t"><small>What “included” means</small><b>Six agents. One account. One login. <em>Zero extra cost.</em></b></div>'+
