@@ -46,6 +46,7 @@
       starters: ['Someone is selling on my listing. What do I do first?', 'I lost the Buy Box. How do I find out why?', 'How do I launch a new product without a compliance flag?', 'My listing was suppressed. Where do I start?', 'How do I spot counterfeit complaints before they hurt me?']
     },
     jacob: {
+      av: 'dr-dsp',
       name: 'Jacob', role: 'Audience specialist', org: 'reMKTR', accent: '#fccc00', grad: 'linear-gradient(135deg,#ffe066 0%,#fccc00 100%)', ink: '#111111',
       launch: 'Talk to Jacob about reaching the shoppers who left.', sub: 'Online · reMKTR audience specialist',
       hello: 'I\'m Jacob from reMKTR. We find the shoppers who looked at your product and left, and bring them back, on Amazon, on streaming TV and on your own site.\n\nWhat\'s going on with your growth?',
@@ -58,8 +59,8 @@
   if (!AGENTS[AGENT_ID]) AGENT_ID = 'ava';
   var A = AGENTS[AGENT_ID];
   var BOOK = AGENT_ID === 'jacob' ? 'https://calendly.com/jayce-remktr/30min' : 'https://fullcircle.fillout.com/bookacall-nick';
-  var AVATAR_VIDEO = '/agents/' + AGENT_ID + '.mp4';
-  var AVATAR_POSTER = '/agents/' + AGENT_ID + '.jpg';
+  var AVATAR_VIDEO = '/agents/' + (A.av || AGENT_ID) + '.mp4';
+  var AVATAR_POSTER = '/agents/' + (A.av || AGENT_ID) + '.jpg';
   var STORE_KEY = 'agent-chat-v3-' + AGENT_ID;
   var STARTERS = A.starters;
   var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -140,6 +141,9 @@
     a.target = '_blank';
     a.rel = 'noopener';
     a.innerHTML = esc(label || 'Book a strategy call') + ' <span aria-hidden="true">&rarr;</span>';
+    a.addEventListener('click', function (e) {
+      if (window.Calendly && /calendly\.com/.test(a.href)) { e.preventDefault(); window.Calendly.initPopupWidget({ url: a.href }); }
+    });
     logEl.appendChild(a);
   }
 
