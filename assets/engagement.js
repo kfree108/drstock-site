@@ -30,6 +30,8 @@
 
   var LABEL = C.label || 'Book a demo call';
   var SUB   = C.sub   || '';
+  // outside links (a booking page) open in a new tab; on-site links (the /#waitlist form) stay in this tab
+  var TGT   = /^https?:/i.test(C.href) ? ' target="_blank" rel="noopener"' : '';
   var SEEN  = {};                       // fire each event once per page
   var reduce = window.matchMedia &&
                window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -61,7 +63,7 @@
     d.className = 'fc-cta';
     d.setAttribute('data-placement', placement);
     d.innerHTML =
-      '<a class="fc-cta-btn" href="' + C.href + '" target="_blank" rel="noopener">' +
+      '<a class="fc-cta-btn" href="' + C.href + '"' + TGT + '>' +
       LABEL + ' →</a>' +
       (SUB ? '<span class="fc-cta-sub">' + SUB + '</span>' : '');
     d.querySelector('a').addEventListener('click', function () {
@@ -199,7 +201,7 @@
         '<p class="fc-pop-lede">' +
           (cfg.body || 'Twenty minutes on your real numbers. First 30 days free.') + '</p>' +
         pts +
-        '<a class="fc-cta-btn" href="' + C.href + '" target="_blank" rel="noopener">' +
+        '<a class="fc-cta-btn" href="' + C.href + '"' + TGT + '>' +
           (cfg.label || LABEL) + '</a>' +
         (cfg.proof ? '<p class="fc-pop-proof">' + cfg.proof + '</p>' : '') +
         '<button class="fc-pop-no">' +
