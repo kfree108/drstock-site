@@ -327,6 +327,9 @@ footer{border-top:1px solid var(--line);padding:56px 0 112px;margin-top:0}
 .family a.here{background:rgba(255,180,61,.08)}
 .family a.here b{color:var(--amber)}
 .family a:hover b{color:var(--amber)}
+.guides{display:flex;flex-wrap:wrap;gap:8px 22px;margin:0 0 22px;font-size:14px;align-items:center}
+.guides .lb{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.guides a{color:var(--dim);text-decoration:none}.guides a:hover{color:var(--amber)}
 @media (max-width:1000px){.family{grid-template-columns:repeat(2,1fr)}.family a{border-bottom:1px solid var(--line)}.family a:nth-child(2n){border-right:0}}
 @media (max-width:420px){.family{grid-template-columns:1fr}.family a{border-right:0}}
 .foot-b{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-top:34px;color:var(--dim);font-size:13px}
@@ -735,6 +738,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 112px;margin-top:0}
     <li><a href="#freight">Freight</a></li>
     <li><a href="#restock">In the app</a></li>
     <li><a href="#faq">FAQ</a></li>
+    <!-- loop:guides --><li><a href="/learn/">Guides</a></li><!-- /loop:guides -->
   </ul>
   <a class="btn magnetic" href="#waitlist">Join the waitlist</a>
 </nav>
@@ -1280,6 +1284,20 @@ footer{border-top:1px solid var(--line);padding:56px 0 112px;margin-top:0}
 
 <footer>
   <div class="wrap">
+    <!-- loop:guides -->
+    <nav class="guides" aria-label="Inventory guides">
+      <span class="lb">Inventory guides —</span>
+      <a href="/learn/">All guides</a>
+      <a href="/learn/amazon-multi-channel-fulfillment-fees/">Multi-Channel Fulfillment fees</a>
+      <a href="/learn/amazon-fba-shipping/">FBA shipping</a>
+      <a href="/learn/amazon-business-restock/">Amazon Business Restock</a>
+      <a href="/learn/amazon-stranded-inventory/">Stranded inventory</a>
+      <a href="/learn/amazon-inventory-tracking/">Inventory tracking</a>
+      <a href="/compare/amazon-storage-fees/">Storage fees</a>
+      <a href="/compare/best-amazon-reimbursement-service/">Reimbursement services</a>
+      <a href="/compare/cin7-review/">Cin7 review</a>
+    </nav>
+    <!-- /loop:guides -->
     <p class="mono dim" style="margin-bottom:16px">The Full Circle family</p>
     <nav class="family" aria-label="Family of products">
       <a href="https://fullcircleagency.com"><b>Full Circle Agency</b><span>Full-service Amazon, one accountable team.</span><small>fullcircleagency.com</small></a>
